@@ -23,6 +23,7 @@ def test_negative_start_fibonacci():
     assert not check_fibonacci([-1, 0, 1, 1, 2, 3, 5, 8])
     assert not check_fibonacci([0, 4, 4, 8, 12])
 
+
 def test_positive_is_fibonacci():
     """Testing that all the sequence is a part of the Fibonacci sequence (return True)"""
     assert check_fibonacci([0, 1, 1, 2])
@@ -33,4 +34,3 @@ def test_negative_is_fibonacci():
     """Testing that all the sequence isn't a psrt of the Fibonacci sequence (return False)"""
     assert not check_fibonacci([18, 19, 37])
     assert not check_fibonacci([0, 1, 1, 2, 3, 5, 8, 12])
-
