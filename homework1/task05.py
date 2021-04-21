@@ -31,6 +31,3 @@ def find_maximal_sub_array_sum(nums: List[int], k: int) -> int:
         current_sum = 0
 
     return max_sum
-
-
-print(find_maximal_sub_array_sum([1, 2], 10))
