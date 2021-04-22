@@ -1,17 +1,18 @@
 """Tests for task03 - Min&max"""
+import pytest
 
 from homework1.task03 import find_maximum_and_minimum
 
 
-def test_min_max():
+@pytest.mark.parametrize(
+    "file_name, mini, maxi",
+    [
+        ("./homework1/test_task3_1.txt", -2000, 2000),
+        ("./homework1/test_task3_2.txt", 5, 5),
+    ],
+)
+def test_min_max(file_name: str, mini: int, maxi: int):
     """Testing that file.txt will be read
     and min and max values will be returned
-    as a tuple"""
-    assert find_maximum_and_minimum(r"./homework1/test_task3_1.txt") == (-2000, 2000)
-
-
-def test_with_one_line():
-    """Testing that file.txt will be read
-    and min and max values will be returned
-    as a tuple for one line"""
-    assert find_maximum_and_minimum(r"./homework1/test_task3_2.txt") == (5, 5)
+    as a tuple: for some lines, for one line"""
+    assert find_maximum_and_minimum(file_name) == (mini, maxi)
