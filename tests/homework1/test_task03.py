@@ -7,8 +7,8 @@ from homework1.task03 import find_maximum_and_minimum
 @pytest.mark.parametrize(
     "file_name, mini, maxi",
     [
-        ("test_task3_1.txt", -2000, 2000),
-        ("test_task3_2.txt", 5, 5),
+        ("./tests/homework1/test_task3_1.txt", -2000, 2000),
+        ("./tests/homework1/test_task3_2.txt", 5, 5),
     ],
 )
 def test_min_max(file_name: str, mini: int, maxi: int):
