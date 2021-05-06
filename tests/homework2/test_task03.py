@@ -1,4 +1,4 @@
-"""Test for task01 - Text work"""
+"""Test for task03 - All possible lists"""
 from homework2.task03 import combinations
 
 
