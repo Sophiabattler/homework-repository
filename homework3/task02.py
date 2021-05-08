@@ -1,7 +1,4 @@
-"""
-Calculation time should not take more than a minute.
-Use functional capabilities of multiprocessing module.
-You are not allowed to modify slow_calculate function."""
+"""Task02 - Pool"""
 import hashlib
 import random
 import struct

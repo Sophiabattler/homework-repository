@@ -1,4 +1,4 @@
-"""Test for task03 - Cache n times"""
+"""Test for task01 - Cache n times"""
 from unittest.mock import Mock, call
 
 from homework3.task01 import cache

@@ -1,4 +1,4 @@
-"""Test for task04 - Filter"""
+"""Test for task03 - Filter"""
 from homework3.task03 import make_filter, sample_data
 
 

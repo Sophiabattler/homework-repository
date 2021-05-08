@@ -1,4 +1,4 @@
-"""Test for task03 - Cache n times"""
+"""Task01 - Cache n times"""
 
 
 def make_key(args, kwargs):
