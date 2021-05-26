@@ -52,4 +52,3 @@ class InitTest(unittest.TestCase):
     def tearDown(self):
         self.file.close()
         os.remove("my_file.txt")
-        pass
