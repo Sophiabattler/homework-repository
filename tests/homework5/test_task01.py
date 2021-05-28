@@ -3,7 +3,6 @@ from datetime import timedelta
 
 from homework5.task01 import Homework, Student, Teacher
 
-
 student = Student("Petrov", "Ivan")
 teacher = Teacher("Ivanov", "Mark")
 late_homework = Homework("Some task", 0)
