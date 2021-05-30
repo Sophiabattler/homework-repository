@@ -17,5 +17,6 @@ jobs:
         run: |
           pip install isort pytest
           ls -la
-          isort --check .
+          black --check .
+          isort --profile black --check .
           py.test tests
