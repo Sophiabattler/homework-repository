@@ -2,8 +2,7 @@ from datetime import timedelta
 
 import pytest
 
-from homework6.task02 import (DeadlineError, Homework, HomeworkResult, Student,
-                              Teacher)
+from homework6.task02 import DeadlineError, Homework, HomeworkResult, Student, Teacher
 
 student = Student("Petrov", "Ivan")
 teacher = Teacher("Ivanov", "Mark")
