@@ -1,8 +1,21 @@
 """Task01 - Cache n times"""
 
 
-def make_key(args, kwargs):
-    return args, frozenset(sorted(kwargs.items()))
+def make_key(*args, **kwargs):
+    """ """
+    keys = []
+
+    def deep_hash_search(items):
+        for item in items:
+            if not item.__hash__:
+                keys.append(str(item))
+            elif item.__hash__ and type(item) != int and len(item) > 1:
+                return deep_hash_search(item)
+            else:
+                keys.append(item)
+
+    deep_hash_search(args)
+    return tuple(keys), frozenset(sorted(kwargs.items()))
 
 
 def cache(times=2):

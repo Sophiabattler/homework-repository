@@ -1,5 +1,15 @@
 """Test for task03 - Filter"""
-from homework3.task03 import make_filter, sample_data
+from homework3.task03 import make_filter
+
+sample_data = [
+    {
+        "name": "Bill",
+        "last_name": "Gilbert",
+        "occupation": "was here",
+        "type": "person",
+    },
+    {"is_dead": True, "kind": "parrot", "type": "bird", "name": "polly"},
+]
 
 
 def test_case_run_throw_filter():

@@ -1,7 +1,7 @@
 """Test for task01 - Cache n times"""
 from unittest.mock import Mock, call
 
-from homework3.task01 import cache
+from homework3.task01 import cache, make_key
 
 
 def test_cache_with_same_arg():
@@ -26,3 +26,7 @@ def test_not_cache_with_different_arg():
     cached_func(1, 3)
     cached_func(5, 2)
     assert mock.mock_calls == [call(1, 3), call(5, 2), call(1, 3), call(5, 2)]
+
+
+def test_make_key_returns_only_hashable_objects():
+    assert make_key([1, 2], 1, a=1) == (("[1, 2]", 1), frozenset({("a", 1)}))
