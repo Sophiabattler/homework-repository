@@ -29,4 +29,4 @@ def test_not_cache_with_different_arg():
 
 
 def test_make_key_returns_only_hashable_objects():
-    assert make_key([1, 2], 1, a=1) == (("[1, 2]", 1), frozenset({("a", 1)}))
+    assert make_key([1, 2], 1, a=1) == ((1, 2), frozenset({("a", 1)}))
