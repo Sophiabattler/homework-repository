@@ -7,9 +7,9 @@ def make_key(*args, **kwargs):
 
     def deep_hash_search(items):
         for item in items:
-            if not item.__hash__:
+            if not hasattr(item, "__hash__"):
                 keys.append(str(item))
-            elif item.__hash__ and type(item) != int and len(item) > 1:
+            elif hasattr(item, "__hash__") and type(item) != int and len(item) > 1:
                 return deep_hash_search(item)
             else:
                 keys.append(item)
