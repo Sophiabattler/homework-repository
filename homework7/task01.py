@@ -10,22 +10,20 @@ def find_occurrences(tree: dict, element: Any) -> int:
         nonlocal counter
         if item == element and type(item) == type(element):
             counter += 1
-        elif type(item) == (bool or int):
+        elif isinstance(item, (bool, int)):
             pass
-        elif type(item) != (str or bool or int) and item != element:
-            if type(item) == dict:
+        elif item != element and not (isinstance(item, (str, bool, int))):
+            if isinstance(item, dict):
                 search_item_in_dict(item)
-            elif type(item) != (str and bool and int):
+            elif isinstance(item, (list, tuple, set)):
                 for elem in item:
                     counting(elem)
 
     def search_item_in_dict(same_tree: dict):
         """Looks for an element in the dictionary"""
         nonlocal counter
-        for key, value in same_tree.items():
-            if element == {key: value}:
-                counter += 1
-                continue
+        if same_tree == element:
+            counter += 1
         for key in same_tree.keys():
             counting(key)
             continue
@@ -36,24 +34,3 @@ def find_occurrences(tree: dict, element: Any) -> int:
     counter = 0
     search_item_in_dict(tree)
     return counter
-
-
-example_tree = {
-    "first": ["RED", "BLUE"],
-    "second": {
-        "simple_key": ["simple", "list", "of", "RED", "valued"],
-    },
-    "third": {
-        "abc": "BLUE",
-        "jhl": "RED",
-        "complex_key": {
-            "key1": "value1",
-            "key2": "RED",
-            "key3": ["a", "lot", "of", "values", {"nested_key": "RED"}],
-        },
-    },
-    "fourth": "RED",
-}
-
-if __name__ == "__main__":
-    print(find_occurrences(example_tree, "RED"))  # 6
